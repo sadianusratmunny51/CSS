@@ -1,6 +1,4 @@
 *{
-    /* margin:0; */
-    /* padding:0; */
     box-sizing: border-box;
 }
 
@@ -10,23 +8,16 @@
     background: linear-gradient(to top left, aqua ,rgb(56, 160, 195));
 }
 .inner_box{
-    /* border: 1px solid black; */
     width: 300px;
     border-radius: 8px;
-    
     margin: 0 auto;
      position: relative;
     top:20%; 
     padding: 20px 40px;
     background-color: #ffffffaa;
-    /* backdrop-filter: blur(5px); */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: large;
-    /* box-shadow: inset; */
-   
-   
-   
 
 }
 
@@ -50,8 +41,6 @@
  .circle-1{
     width:100px;
     height: 100px;
-    /* background-color: rgb(132, 229, 221); */
-    /* border: 1px solid black; */
     position: absolute;
     margin-left: 10%;
     margin-top: 15%;
@@ -61,23 +50,13 @@
  .circle-2{
     width:80px;
     height: 80px;
-    /* background-color: rgb(132, 229, 221); */
-    /* border: 1px solid black; */
     position: absolute;
     margin-left: 10%;
     margin-top: 40%;
     border-radius: 50%;
     background: linear-gradient(to top left, aqua ,rgb(56, 160, 195));
  }
- /* .circle-2{
-    width:100px;
-    height: 100px;
-    background-color: rgb(157, 255, 127);
-    border: 1px solid black;
-    position: absolute;
-    margin-right: 10%;
-    margin-bottom: 10%;
- } */
+
 #fullname{
     height: 30px;
     width:200px;
@@ -97,12 +76,8 @@
   
 .circle-3{
     width:100px;
-    height: 100px;
-    /* background-color: rgb(132, 229, 221); */
-    /* border: 1px solid black; */
+    height: 100px; 
     position: absolute;
-    /* margin-left: 80%;
-    margin-top: 60%; */
     margin-left: 80%;
     margin-top: 80%;
     border-radius: 50%;
@@ -111,11 +86,7 @@
  .circle-4{
     width:80px;
     height: 80px;
-    /* background-color: rgb(132, 229, 221); */
-    /* border: 1px solid black; */
     position: absolute;
-    /* margin-left: 80%;
-    margin-top: 90%; */
     margin-left: 80%;
     margin-top: 60%;
     border-radius: 50%;

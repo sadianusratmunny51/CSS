@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV Template</title>
+    <style>
+        /* Define CSS Variables for colors */
+        :root {
+            --dark-gray: #333;
+            --medium-gray: #4a4a4a;
+            --light-gray: #f5f5f5;
+            --text-color: #333;
+            --white-text: #fff;
+            --section-header-bg: #e0e0e0; /* Lighter gray for section headers */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Overall page background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the top */
+            min-height: 100vh; /* Ensure it takes full viewport height */
+        }
+
+        .cv-container {
+            display: flex;
+            width: 850px; /* Standard A4 width equivalent for web */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            min-height: 1000px; /* Approximate A4 height */
+        }
+
+        /* Left Sidebar Styling */
+        .sidebar {
+            width: 35%; /* Approximately 1/3rd of the width */
+            background-color: var(--medium-gray);
+            color: var(--white-text);
+            padding: 30px 20px;
+            box-sizing: border-box; /* Include padding in width */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Space between sidebar sections */
+        }
+
+        .profile-section {
+            text-align: center;
+            padding-bottom: 20px; /* Space before next section */
+            /* This section has the darkest background from the image, but it's part of the sidebar */
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff; /* White border around image */
+            margin-bottom: 15px;
+        }
+
+        .profile-name {
+            font-size: 1.8em;
+            margin: 0;
+            color: var(--white-text);
+        }
+
+        .profile-title {
+            font-size: 1em;
+            margin: 5px 0 0;
+            opacity: 0.8;
+            color: var(--white-text);
+        }
+
+        .sidebar-section {
+            background-color: var(--dark-gray); /* Darker background for nested sections */
+            padding: 20px;
+            margin-left: -20px; /* Pull it slightly to the left to match image */
+            margin-right: -20px; /* Pull it slightly to the right to match image */
+            position: relative; /* For the "tab" effect if needed later, though not fully replicated here */
+        }
+
+        .sidebar-section h2 {
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--white-text);
+            text-align: center; /* As per image */
+        }
+
+        .sidebar-section p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .skills-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills-list li {
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .contact-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-list li {
+            padding: 8px 0;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            width: 65%; /* Approximately 2/3rds of the width */
+            background-color: #fff;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            color: var(--text-color);
+        }
+
+        .main-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--section-header-bg); /* Line below heading */
+            padding-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        .main-content h3 {
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--dark-gray);
+        }
+
+        .section-item {
+            margin-bottom: 25px;
+            position: relative; /* For the bullet point */
+            padding-left: 20px; /* Space for the custom bullet */
+        }
+
+        .section-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px; /* Adjust vertical alignment of bullet */
+            width: 8px;
+            height: 8px;
+            background-color: var(--dark-gray);
+            border-radius: 50%;
+        }
+
+        .section-item p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .job-title {
+            font-weight: bold;
+        }
+
+        .company-info {
+            font-style: italic;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Specific adjustments for the design */
+        /* To simulate the "tab" effect for sidebar sections */
+        .about-me-section, .skills-section, .contact-me-section {
+            background-color: var(--dark-gray);
+            padding: 20px;
+            position: relative;
+            margin-bottom: 0; /* Remove default margin from gap */
+        }
+
+        /* Small tabs on the right of the sidebar sections */
+        .about-me-section::after,
+        .skills-section::after,
+        .contact-me-section::after {
+            content: '';
+            position: absolute;
+            right: -20px; /* Position to the right, slightly overlapping main content */
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent; /* Half the height of the tab */
+            border-bottom: 20px solid transparent; /* Half the height of the tab */
+            border-left: 20px solid var(--dark-gray); /* Color of the tab */
+            z-index: 1; /* Ensure it's above main content if needed */
+        }
+
+        /* Profile section needs to simulate the top dark gray part */
+        .profile-container {
+            background-color: var(--dark-gray); /* The darkest gray for the profile header */
+            padding: 20px; /* Adjust padding as needed */
+            margin-left: -20px; /* Negative margin to fill sidebar width */
+            margin-right: -20px;
+            margin-top: -30px; /* Negative margin to fill sidebar top */
+            margin-bottom: 20px; /* Space below this area */
+            border-radius: 0 0 50px 50px; /* Rounded bottom corners for profile section */
+            padding-top: 50px; /* More padding at top to visually align */
+            position: relative;
+        }
+
+        .profile-container .profile-pic {
+            margin-bottom: 5px; /* Adjust margin for name */
+        }
+
+        .profile-section-inner {
+            text-align: center;
+            background-color: var(--medium-gray); /* Match the main sidebar background */
+            padding: 20px;
+            border-radius: 50px 50px 0 0; /* Rounded top corners for about me */
+            margin-left: -20px; /* Reset for this inner div */
+            margin-right: -20px;
+            margin-top: 20px; /* Move it down from the profile picture */
+        }
+        .profile-section-inner h2 {
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--white-text);
+            text-align: center;
+        }
+        .profile-section-inner p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+
+        /* Specific adjustments for the header bar in main content */
+        .main-content .header-bar {
+            background-color: var(--section-header-bg);
+            padding: 10px 0;
+            margin: -30px -40px 30px; /* Negative margin to fill full width of main-content and align to top */
+            text-align: center;
+            position: relative; /* For vertical line in header if needed */
+        }
+
+        .main-content .header-bar h1 {
+            font-size: 2.2em;
+            margin: 0;
+            color: var(--dark-gray);
+        }
+
+        .main-content .header-bar p {
+            font-size: 1.1em;
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        /* Adjusting for the specific layout of "Your Name" and "Accountant" */
+        .your-name {
+            font-size: 2.5em; /* Larger as in the image */
+            margin: 0;
+            line-height: 1; /* Tighten line height */
+            color: var(--dark-gray);
+            font-weight: bold;
+        }
+        .your-profession {
+            font-size: 1.3em;
+            margin: 0;
+            color: var(--medium-gray);
+            font-weight: normal;
+        }
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align text to the left */
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px; /* Adjust padding to match content padding */
+            margin: -30px -40px 30px; /* Bring it flush with container */
+            background-color: var(--section-header-bg);
+        }
+
+
+        /* Small adjustments for contact me icons (using text for now) */
+        .contact-list li::before {
+            content: '•'; /* Placeholder for icon */
+            font-size: 1.2em;
+            color: var(--white-text);
+        }
+        .contact-list li:nth-child(1)::before { content: '✉'; } /* Email */
+        .contact-list li:nth-child(2)::before { content: '🌐'; } /* Website */
+        .contact-list li:nth-child(3)::before { content: '📍'; } /* Location */
+        .contact-list li:nth-child(4)::before { content: '📞'; } /* Phone */
+
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="profile-container">
+                <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+                </div>
+
+            <div class="sidebar-section about-me-section">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div class="sidebar-section skills-section">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <ul>
+                        <li>Sales</li>
+                        <li>Analytics</li>
+                        <li>Programming</li>
+                        <li>Office</li>
+                        <li>Graphic Design</li>
+                        <li>Digital Marketing</li>
+                        <li>Offline Marketing</li>
+                        <li>Self-Motivation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-section contact-me-section">
+                <h2>Contact Me</h2>
+                <div class="contact-list">
+                    <ul>
+                        <li>mail@reallysite.com</li>
+                        <li>www.realsite.com</li>
+                        <li>123 Anywhere St, City</li>
+                        <li>+123-456-890</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header-bar">
+                <div class="header-text">
+                    <h1 class="your-name">Your Name</h1>
+                    <p class="your-profession">Accountant</p>
+                </div>
+            </div>
+
+            <h2>Education</h2>
+            <div class="section-item">
+                <p class="job-title">Faculty of Commerce</p>
+                <p class="company-info">Cairo University | May 2017 - Jul 2021</p>
+                <p>Accounting Department</p>
+            </div>
+            <h2>Work Experience</h2>
+            <div class="section-item">
+                <p class="job-title">Job Position Here</p>
+                <p class="company-info">Company Name | Location | Jan 2019 - May 2020</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euis</p>
+            </div>
+
+            <div class="section-item">
+                <p class="job-title">Job Position Here</p>
+                <p class="company-info">Company Name | Location | Jan 2019 - May 2020</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euis</p>
+            </div>
+            </div>
+    </div>
+</body>
+</html>
