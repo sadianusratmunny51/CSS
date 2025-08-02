@@ -1,0 +1,65 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Profile Card */
+.card {
+  
+  background: #aae2e1;
+  width: 300px;
+  padding: 30px;
+  margin:30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(36, 232, 229, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* ekhane  card e hover korle 10 px upore uthe jabe 
+ and box we shadow change hobe  */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(225, 16, 16, 0.2);
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.bio {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #555;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
